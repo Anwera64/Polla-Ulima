@@ -97,12 +97,11 @@
 		3A374E1420CEEBD500986DAA /* Polla Ulima */ = {
 			isa = PBXGroup;
 			children = (
-				3A374E1520CEEBD500986DAA /* AppDelegate.swift */,
+				3A8F0E4520CF2D2500A48BEE /* Other */,
 				3A374E1720CEEBD500986DAA /* ViewController.swift */,
 				3A374E1920CEEBD500986DAA /* Main.storyboard */,
-				3A374E1C20CEEBD600986DAA /* Assets.xcassets */,
-				3A374E1E20CEEBD600986DAA /* LaunchScreen.storyboard */,
 				3A374E2120CEEBD600986DAA /* Info.plist */,
+				3A374E1C20CEEBD600986DAA /* Assets.xcassets */,
 			);
 			path = "Polla Ulima";
 			sourceTree = "<group>";
@@ -123,6 +122,15 @@
 				3A374E3720CEEBD600986DAA /* Info.plist */,
 			);
 			path = "Polla UlimaUITests";
+			sourceTree = "<group>";
+		};
+		3A8F0E4520CF2D2500A48BEE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3A374E1520CEEBD500986DAA /* AppDelegate.swift */,
+				3A374E1E20CEEBD600986DAA /* LaunchScreen.storyboard */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
