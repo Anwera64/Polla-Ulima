@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3A374E1620CEEBD500986DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374E1520CEEBD500986DAA /* AppDelegate.swift */; };
-		3A374E1820CEEBD500986DAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374E1720CEEBD500986DAA /* ViewController.swift */; };
+		3A374E1820CEEBD500986DAA /* EquiposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374E1720CEEBD500986DAA /* EquiposViewController.swift */; };
 		3A374E1B20CEEBD500986DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A374E1920CEEBD500986DAA /* Main.storyboard */; };
 		3A374E1D20CEEBD600986DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A374E1C20CEEBD600986DAA /* Assets.xcassets */; };
 		3A374E2020CEEBD600986DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A374E1E20CEEBD600986DAA /* LaunchScreen.storyboard */; };
 		3A374E2B20CEEBD600986DAA /* Polla_UlimaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374E2A20CEEBD600986DAA /* Polla_UlimaTests.swift */; };
 		3A374E3620CEEBD600986DAA /* Polla_UlimaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374E3520CEEBD600986DAA /* Polla_UlimaUITests.swift */; };
+		3A6ACF2820D0227C00F0B221 /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACF2720D0227C00F0B221 /* ViewControllerLogin.swift */; };
+		3A6ACF2F20D02BFB00F0B221 /* PollaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACF2E20D02BFB00F0B221 /* PollaTableViewController.swift */; };
+		3A6ACF3120D0362F00F0B221 /* EquiposManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACF3020D0362F00F0B221 /* EquiposManager.swift */; };
+		3A6ACF3520D0632800F0B221 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACF3420D0632800F0B221 /* Team.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		3A374E1220CEEBD500986DAA /* Polla Ulima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Polla Ulima.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A374E1520CEEBD500986DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A374E1720CEEBD500986DAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A374E1720CEEBD500986DAA /* EquiposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquiposViewController.swift; sourceTree = "<group>"; };
 		3A374E1A20CEEBD500986DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A374E1C20CEEBD600986DAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A374E1F20CEEBD600986DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		3A374E3120CEEBD600986DAA /* Polla UlimaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polla UlimaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A374E3520CEEBD600986DAA /* Polla_UlimaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polla_UlimaUITests.swift; sourceTree = "<group>"; };
 		3A374E3720CEEBD600986DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A6ACF2720D0227C00F0B221 /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
+		3A6ACF2E20D02BFB00F0B221 /* PollaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollaTableViewController.swift; sourceTree = "<group>"; };
+		3A6ACF3020D0362F00F0B221 /* EquiposManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquiposManager.swift; sourceTree = "<group>"; };
+		3A6ACF3420D0632800F0B221 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +105,11 @@
 		3A374E1420CEEBD500986DAA /* Polla Ulima */ = {
 			isa = PBXGroup;
 			children = (
+				3A6ACF3320D0630700F0B221 /* Models */,
+				3A6ACF2D20D02BEF00F0B221 /* Polla */,
+				3A6ACF2920D0255D00F0B221 /* Equipos */,
+				3A6ACF2620D0224300F0B221 /* Login */,
 				3A8F0E4520CF2D2500A48BEE /* Other */,
-				3A374E1720CEEBD500986DAA /* ViewController.swift */,
 				3A374E1920CEEBD500986DAA /* Main.storyboard */,
 				3A374E2120CEEBD600986DAA /* Info.plist */,
 				3A374E1C20CEEBD600986DAA /* Assets.xcassets */,
@@ -122,6 +133,39 @@
 				3A374E3720CEEBD600986DAA /* Info.plist */,
 			);
 			path = "Polla UlimaUITests";
+			sourceTree = "<group>";
+		};
+		3A6ACF2620D0224300F0B221 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3A6ACF2720D0227C00F0B221 /* ViewControllerLogin.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3A6ACF2920D0255D00F0B221 /* Equipos */ = {
+			isa = PBXGroup;
+			children = (
+				3A374E1720CEEBD500986DAA /* EquiposViewController.swift */,
+				3A6ACF3020D0362F00F0B221 /* EquiposManager.swift */,
+			);
+			path = Equipos;
+			sourceTree = "<group>";
+		};
+		3A6ACF2D20D02BEF00F0B221 /* Polla */ = {
+			isa = PBXGroup;
+			children = (
+				3A6ACF2E20D02BFB00F0B221 /* PollaTableViewController.swift */,
+			);
+			path = Polla;
+			sourceTree = "<group>";
+		};
+		3A6ACF3320D0630700F0B221 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A6ACF3420D0632800F0B221 /* Team.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		3A8F0E4520CF2D2500A48BEE /* Other */ = {
@@ -264,8 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A374E1820CEEBD500986DAA /* ViewController.swift in Sources */,
+				3A6ACF3520D0632800F0B221 /* Team.swift in Sources */,
+				3A6ACF2F20D02BFB00F0B221 /* PollaTableViewController.swift in Sources */,
+				3A6ACF3120D0362F00F0B221 /* EquiposManager.swift in Sources */,
+				3A374E1820CEEBD500986DAA /* EquiposViewController.swift in Sources */,
 				3A374E1620CEEBD500986DAA /* AppDelegate.swift in Sources */,
+				3A6ACF2820D0227C00F0B221 /* ViewControllerLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

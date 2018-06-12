@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller Login-->
         <scene sceneID="WNJ-Fp-6ak">
             <objects>
-                <viewController id="OuN-op-Stt" sceneMemberID="viewController">
+                <viewController id="OuN-op-Stt" customClass="ViewControllerLogin" customModule="Polla_Ulima" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2D7-Bx-lNl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,8 +45,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-mN-WPK">
-                                <rect key="frame" x="164.66666666666666" y="724" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="159.66666666666666" y="724" width="56" height="30"/>
+                                <state key="normal" title="Ingresar"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ip4-49-Syc">
                                 <rect key="frame" x="28" y="670" width="319" height="30"/>
@@ -71,15 +71,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eFx-6R-z4L"/>
                     </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="ip4-49-Syc" id="SVm-ah-EBj"/>
+                        <outlet property="loginButton" destination="zaJ-mN-WPK" id="OeW-pl-rJv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXf-Jw-Fzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.799999999999997" y="60.719640179910051"/>
+            <point key="canvasLocation" x="1004" y="-161.08374384236453"/>
         </scene>
-        <!--View Controller-->
+        <!--Equipos-->
         <scene sceneID="4oU-yL-FKe">
             <objects>
-                <tableViewController id="f7H-zF-9xF" customClass="ViewController" customModule="Polla_Ulima" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EquiposViewController" id="f7H-zF-9xF" customClass="EquiposViewController" customModule="Polla_Ulima" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PCf-i5-Hoe" customClass="ViewCon">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,10 +103,40 @@
                             <outlet property="delegate" destination="f7H-zF-9xF" id="0Xg-k7-mGp"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Equipos" id="PeG-Bk-003"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tF7-EZ-h8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="61"/>
+            <point key="canvasLocation" x="1751" y="526"/>
+        </scene>
+        <!--Polla-->
+        <scene sceneID="RLA-7W-oVd">
+            <objects>
+                <tableViewController storyboardIdentifier="PollaTableViewController" id="piV-4T-cdk" customClass="PollaTableViewController" customModule="Polla_Ulima" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aEv-AV-mg8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8EM-sY-Dzo">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8EM-sY-Dzo" id="rl8-hw-9No">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="piV-4T-cdk" id="i3L-3x-kZe"/>
+                            <outlet property="delegate" destination="piV-4T-cdk" id="DLN-8X-7lK"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Polla" id="boV-eh-rfM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="28A-6X-mwn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750" y="-161"/>
         </scene>
     </scenes>
     <resources>
