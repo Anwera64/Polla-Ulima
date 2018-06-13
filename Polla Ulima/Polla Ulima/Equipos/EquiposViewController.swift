@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import Darwin
 
 class EquiposViewController: UITableViewController, EquiposDelegate {
-    private var manager: EquiposManager?
+    private var manager: EquiposManager!
     private let sections = 1
+    public var teams: [Team]?
     
     static let identifier: String = "EquiposViewController"
     
     override func viewDidAppear(_ animated: Bool) {
         manager = EquiposManager(delegate: self)
-        manager?.getTeams()
+        manager.getTeams()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -24,19 +26,41 @@ class EquiposViewController: UITableViewController, EquiposDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let teams = manager?.teams {
+        if let teams = teams {
             return teams.count
         } else {
             return 0
         }
     }
-
-    func equiposReady() {
-        tableView.reloadData()
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let celda = self.tableView.dequeueReusableCell(withIdentifier: "Celda", for: indexPath) as! EquiposTableViewCell
+        if let teams = teams {
+            celda.nameLabel.text = teams[indexPath.row].name
+            celda.rankingLabel.text = /*String(arc4random_uniform(100))*/ String(indexPath.row)
+            if let url = URL(string: teams[indexPath.row].crestURL) {
+                celda.crestView.load(URLRequest(url: url))
+            }
+        }
+        return celda
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let playersTableViewController = storyboard.instantiateViewController(withIdentifier: PlayersTableViewController.identifier) as! PlayersTableViewController
+        playersTableViewController.url = teams?[indexPath.row].links.players.href
+        
+        self.navigationController?.pushViewController(playersTableViewController, animated: true)
+    }
+    
+    func equiposReady(teams: [Team]) {
+        self.teams = teams
+        self.tableView.reloadData()
         print("Reloading Data")
     }
     
-
-
+    func imageReady(imageData: Data, index: IndexPath) {
+    }
+    
 }
 

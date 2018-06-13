@@ -11,12 +11,12 @@ import Foundation
 class EquiposManager {
     private var delegate: EquiposDelegate?
     private let urlString = "http://api.football-data.org/v1/competitions/467/teams"
-    public var teams: [Team]?
+    
     
     init(delegate: EquiposDelegate) {
         self.delegate = delegate
     }
-
+    
     func getTeams() {
         guard let url = URL(string: urlString) else {
             print("wrong url")
@@ -29,12 +29,29 @@ class EquiposManager {
                 return
             }
             
+            if let d = data, let apiData = try? JSONDecoder().decode(TeamApiData.self, from: d) {
+                DispatchQueue.main.async {
+                    self.delegate?.equiposReady(teams: apiData.teams)
+                }
+            }
+        }).resume()
+    }
+    
+    func getCrest(urlString: String, index: IndexPath) {
+        guard let url = URL(string: urlString) else {
+            print("wrong image url")
+            return
+        }
+        
+        URLSession(configuration: .default).dataTask(with: url, completionHandler: { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            
             if let d = data {
-                if let apiData = try? JSONDecoder().decode(TeamApiData.self, from: d) {
-                    self.teams = apiData.teams
-                    DispatchQueue.main.async {
-                        self.delegate?.equiposReady()
-                    }
+                DispatchQueue.main.async {
+                    self.delegate?.imageReady(imageData: d, index: index)
                 }
             }
         }).resume()
@@ -42,5 +59,6 @@ class EquiposManager {
 }
 
 protocol EquiposDelegate {
-    func equiposReady()
+    func equiposReady(teams: [Team])
+    func imageReady(imageData: Data, index: IndexPath)
 }

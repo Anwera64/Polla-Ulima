@@ -32,12 +32,12 @@ class ViewControllerLogin: UIViewController {
         }
         
         // Crear los viewControllers
-        let stoyboard = UIStoryboard(name: "Main", bundle: nil)
-        let pollaTableViewController = stoyboard.instantiateViewController(withIdentifier: PollaTableViewController.identifier) as! PollaTableViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let pollaTableViewController = storyboard.instantiateViewController(withIdentifier: PollaTableViewController.identifier) as! PollaTableViewController
         pollaTableViewController.user = user
         pollaTableViewController.tabBarItem.title = "Polla"
         
-        let equiposViewController = stoyboard.instantiateViewController(withIdentifier: EquiposViewController.identifier) as! EquiposViewController
+        let equiposViewController = storyboard.instantiateViewController(withIdentifier: EquiposViewController.identifier) as! UINavigationController
         equiposViewController.tabBarItem.title = "Equipos"
         
         // Crear el tab bar controller

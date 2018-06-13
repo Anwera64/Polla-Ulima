@@ -18,6 +18,11 @@
 		3A6ACF2F20D02BFB00F0B221 /* PollaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACF2E20D02BFB00F0B221 /* PollaTableViewController.swift */; };
 		3A6ACF3120D0362F00F0B221 /* EquiposManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACF3020D0362F00F0B221 /* EquiposManager.swift */; };
 		3A6ACF3520D0632800F0B221 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACF3420D0632800F0B221 /* Team.swift */; };
+		3A6EAFCA20D19B0B00A8C870 /* EquiposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EAFC920D19B0B00A8C870 /* EquiposTableViewCell.swift */; };
+		3A6EAFD320D1B91700A8C870 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EAFD220D1B91700A8C870 /* Player.swift */; };
+		3A6EAFD620D1B96E00A8C870 /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EAFD520D1B96E00A8C870 /* PlayersTableViewController.swift */; };
+		3A6EAFD820D1B99B00A8C870 /* PlayersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EAFD720D1B99B00A8C870 /* PlayersManager.swift */; };
+		3A6EAFDB20D1D18300A8C870 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EAFDA20D1D18300A8C870 /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		3A6ACF2E20D02BFB00F0B221 /* PollaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollaTableViewController.swift; sourceTree = "<group>"; };
 		3A6ACF3020D0362F00F0B221 /* EquiposManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquiposManager.swift; sourceTree = "<group>"; };
 		3A6ACF3420D0632800F0B221 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		3A6EAFC920D19B0B00A8C870 /* EquiposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquiposTableViewCell.swift; sourceTree = "<group>"; };
+		3A6EAFD220D1B91700A8C870 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		3A6EAFD520D1B96E00A8C870 /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
+		3A6EAFD720D1B99B00A8C870 /* PlayersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersManager.swift; sourceTree = "<group>"; };
+		3A6EAFDA20D1D18300A8C870 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +156,10 @@
 		3A6ACF2920D0255D00F0B221 /* Equipos */ = {
 			isa = PBXGroup;
 			children = (
+				3A6EAFD420D1B94400A8C870 /* Players */,
 				3A374E1720CEEBD500986DAA /* EquiposViewController.swift */,
 				3A6ACF3020D0362F00F0B221 /* EquiposManager.swift */,
+				3A6EAFC920D19B0B00A8C870 /* EquiposTableViewCell.swift */,
 			);
 			path = Equipos;
 			sourceTree = "<group>";
@@ -164,8 +176,27 @@
 			isa = PBXGroup;
 			children = (
 				3A6ACF3420D0632800F0B221 /* Team.swift */,
+				3A6EAFD220D1B91700A8C870 /* Player.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3A6EAFD420D1B94400A8C870 /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				3A6EAFD920D1D16800A8C870 /* Player */,
+				3A6EAFD520D1B96E00A8C870 /* PlayersTableViewController.swift */,
+				3A6EAFD720D1B99B00A8C870 /* PlayersManager.swift */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+		3A6EAFD920D1D16800A8C870 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				3A6EAFDA20D1D18300A8C870 /* PlayerViewController.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		3A8F0E4520CF2D2500A48BEE /* Other */ = {
@@ -308,12 +339,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6EAFD820D1B99B00A8C870 /* PlayersManager.swift in Sources */,
 				3A6ACF3520D0632800F0B221 /* Team.swift in Sources */,
+				3A6EAFCA20D19B0B00A8C870 /* EquiposTableViewCell.swift in Sources */,
 				3A6ACF2F20D02BFB00F0B221 /* PollaTableViewController.swift in Sources */,
 				3A6ACF3120D0362F00F0B221 /* EquiposManager.swift in Sources */,
+				3A6EAFD320D1B91700A8C870 /* Player.swift in Sources */,
 				3A374E1820CEEBD500986DAA /* EquiposViewController.swift in Sources */,
 				3A374E1620CEEBD500986DAA /* AppDelegate.swift in Sources */,
 				3A6ACF2820D0227C00F0B221 /* ViewControllerLogin.swift in Sources */,
+				3A6EAFDB20D1D18300A8C870 /* PlayerViewController.swift in Sources */,
+				3A6EAFD620D1B96E00A8C870 /* PlayersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
