@@ -23,6 +23,12 @@
 		3A6EAFD620D1B96E00A8C870 /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EAFD520D1B96E00A8C870 /* PlayersTableViewController.swift */; };
 		3A6EAFD820D1B99B00A8C870 /* PlayersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EAFD720D1B99B00A8C870 /* PlayersManager.swift */; };
 		3A6EAFDB20D1D18300A8C870 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EAFDA20D1D18300A8C870 /* PlayerViewController.swift */; };
+		3A8B2F9C20D304CA00CFC1E9 /* PollaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B2F9B20D304CA00CFC1E9 /* PollaManager.swift */; };
+		3A8B2F9E20D307B100CFC1E9 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B2F9D20D307B100CFC1E9 /* Fixture.swift */; };
+		3AF8308220D31F4A00E8C757 /* PollaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8308120D31F4A00E8C757 /* PollaTableViewCell.swift */; };
+		3AF8308420D322FE00E8C757 /* PollaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8308320D322FE00E8C757 /* PollaViewController.swift */; };
+		3AF8308720D3277D00E8C757 /* PollaGambleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8308620D3277D00E8C757 /* PollaGambleManager.swift */; };
+		3AF8308A20D3321700E8C757 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8308920D3321700E8C757 /* AlertUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,12 @@
 		3A6EAFD520D1B96E00A8C870 /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
 		3A6EAFD720D1B99B00A8C870 /* PlayersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersManager.swift; sourceTree = "<group>"; };
 		3A6EAFDA20D1D18300A8C870 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		3A8B2F9B20D304CA00CFC1E9 /* PollaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollaManager.swift; sourceTree = "<group>"; };
+		3A8B2F9D20D307B100CFC1E9 /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		3AF8308120D31F4A00E8C757 /* PollaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollaTableViewCell.swift; sourceTree = "<group>"; };
+		3AF8308320D322FE00E8C757 /* PollaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollaViewController.swift; sourceTree = "<group>"; };
+		3AF8308620D3277D00E8C757 /* PollaGambleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollaGambleManager.swift; sourceTree = "<group>"; };
+		3AF8308920D3321700E8C757 /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +127,7 @@
 		3A374E1420CEEBD500986DAA /* Polla Ulima */ = {
 			isa = PBXGroup;
 			children = (
+				3AF8308820D3320B00E8C757 /* Utils */,
 				3A6ACF3320D0630700F0B221 /* Models */,
 				3A6ACF2D20D02BEF00F0B221 /* Polla */,
 				3A6ACF2920D0255D00F0B221 /* Equipos */,
@@ -168,6 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				3A6ACF2E20D02BFB00F0B221 /* PollaTableViewController.swift */,
+				3A8B2F9B20D304CA00CFC1E9 /* PollaManager.swift */,
+				3AF8308120D31F4A00E8C757 /* PollaTableViewCell.swift */,
+				3AF8308520D3274E00E8C757 /* Gamble */,
 			);
 			path = Polla;
 			sourceTree = "<group>";
@@ -177,6 +193,7 @@
 			children = (
 				3A6ACF3420D0632800F0B221 /* Team.swift */,
 				3A6EAFD220D1B91700A8C870 /* Player.swift */,
+				3A8B2F9D20D307B100CFC1E9 /* Fixture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +223,23 @@
 				3A374E1E20CEEBD600986DAA /* LaunchScreen.storyboard */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		3AF8308520D3274E00E8C757 /* Gamble */ = {
+			isa = PBXGroup;
+			children = (
+				3AF8308320D322FE00E8C757 /* PollaViewController.swift */,
+				3AF8308620D3277D00E8C757 /* PollaGambleManager.swift */,
+			);
+			path = Gamble;
+			sourceTree = "<group>";
+		};
+		3AF8308820D3320B00E8C757 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3AF8308920D3321700E8C757 /* AlertUtil.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,16 +373,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8B2F9E20D307B100CFC1E9 /* Fixture.swift in Sources */,
+				3A8B2F9C20D304CA00CFC1E9 /* PollaManager.swift in Sources */,
 				3A6EAFD820D1B99B00A8C870 /* PlayersManager.swift in Sources */,
 				3A6ACF3520D0632800F0B221 /* Team.swift in Sources */,
 				3A6EAFCA20D19B0B00A8C870 /* EquiposTableViewCell.swift in Sources */,
 				3A6ACF2F20D02BFB00F0B221 /* PollaTableViewController.swift in Sources */,
 				3A6ACF3120D0362F00F0B221 /* EquiposManager.swift in Sources */,
+				3AF8308A20D3321700E8C757 /* AlertUtil.swift in Sources */,
 				3A6EAFD320D1B91700A8C870 /* Player.swift in Sources */,
+				3AF8308220D31F4A00E8C757 /* PollaTableViewCell.swift in Sources */,
 				3A374E1820CEEBD500986DAA /* EquiposViewController.swift in Sources */,
 				3A374E1620CEEBD500986DAA /* AppDelegate.swift in Sources */,
+				3AF8308420D322FE00E8C757 /* PollaViewController.swift in Sources */,
 				3A6ACF2820D0227C00F0B221 /* ViewControllerLogin.swift in Sources */,
 				3A6EAFDB20D1D18300A8C870 /* PlayerViewController.swift in Sources */,
+				3AF8308720D3277D00E8C757 /* PollaGambleManager.swift in Sources */,
 				3A6EAFD620D1B96E00A8C870 /* PlayersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

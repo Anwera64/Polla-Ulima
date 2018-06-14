@@ -29,9 +29,20 @@ class EquiposManager {
                 return
             }
             
-            if let d = data, let apiData = try? JSONDecoder().decode(TeamApiData.self, from: d) {
+            if let d = data, let json = (try? JSONSerialization.jsonObject(with: d, options: [])) as? [String: Any] {
+                var teams: [Team] = Array()
+                if let teamsJSON = json["teams"] as? [[String: Any]]  {
+                    for team in teamsJSON {
+                        let name = team["name"] as? String
+                        let crestURL = team["crestUrl"] as! String
+                        let links = team["_links"] as! [String: Any]
+                        let playerLinks = links["players"] as! [String: Any]
+                        let playerLink = playerLinks["href"] as? String
+                        teams.append(Team(playerLink: playerLink!, name: name, crestURL: crestURL))
+                    }
+                }
                 DispatchQueue.main.async {
-                    self.delegate?.equiposReady(teams: apiData.teams)
+                    self.delegate?.equiposReady(teams: teams)
                 }
             }
         }).resume()

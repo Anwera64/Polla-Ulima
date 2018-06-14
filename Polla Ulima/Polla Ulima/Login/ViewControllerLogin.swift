@@ -24,25 +24,26 @@ class ViewControllerLogin: UIViewController {
     
     @objc func navigateToTabBar() {
         guard let user = inputTextField.text?.trimmed() else {
-            let alert = UIAlertController(title: "Aviso", message: "Tienes que ingresar un usuario", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel)
-            alert.addAction(action)
+            let alert = AlertUtil.simpleAlert(title: "Aviso", detail: "Tienes que ingresar un usuario.")
             present(alert, animated: true)
             return
         }
         
+        let defaults = UserDefaults.standard
+        defaults.set(user, forKey: "USER")
+        
         // Crear los viewControllers
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let pollaTableViewController = storyboard.instantiateViewController(withIdentifier: PollaTableViewController.identifier) as! PollaTableViewController
-        pollaTableViewController.user = user
-        pollaTableViewController.tabBarItem.title = "Polla"
         
-        let equiposViewController = storyboard.instantiateViewController(withIdentifier: EquiposViewController.identifier) as! UINavigationController
-        equiposViewController.tabBarItem.title = "Equipos"
+        let pollaNavigatorController = storyboard.instantiateViewController(withIdentifier: "PollaNavigationController") as! UINavigationController
+        pollaNavigatorController.tabBarItem.title = "Polla"
+        
+        let equiposNavigationViewController = storyboard.instantiateViewController(withIdentifier: EquiposViewController.identifier) as! UINavigationController
+        equiposNavigationViewController.tabBarItem.title = "Equipos"
         
         // Crear el tab bar controller
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [equiposViewController, pollaTableViewController]
+        tabBarController.viewControllers = [equiposNavigationViewController, pollaNavigatorController]
         
         present(tabBarController, animated: true)
     }

@@ -38,7 +38,7 @@ class EquiposViewController: UITableViewController, EquiposDelegate {
         if let teams = teams {
             celda.nameLabel.text = teams[indexPath.row].name
             celda.rankingLabel.text = /*String(arc4random_uniform(100))*/ String(indexPath.row)
-            if let url = URL(string: teams[indexPath.row].crestURL) {
+            if let stringURL = teams[indexPath.row].crestURL, let url = URL(string: stringURL) {
                 celda.crestView.load(URLRequest(url: url))
             }
         }
@@ -48,7 +48,7 @@ class EquiposViewController: UITableViewController, EquiposDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let playersTableViewController = storyboard.instantiateViewController(withIdentifier: PlayersTableViewController.identifier) as! PlayersTableViewController
-        playersTableViewController.url = teams?[indexPath.row].links.players.href
+        playersTableViewController.url = teams?[indexPath.row].playerLink
         
         self.navigationController?.pushViewController(playersTableViewController, animated: true)
     }
