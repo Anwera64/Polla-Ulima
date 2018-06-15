@@ -17,7 +17,7 @@ class PollaViewController: UIViewController, PollaGambleDelegate {
     public var team1, team2: String!
 
     @IBOutlet var team1Label: UILabel!
-    @IBOutlet var team2Label: UILabel!§ 
+    @IBOutlet var team2Label: UILabel!
     @IBOutlet var inputScore1: UITextField!
     @IBOutlet var inputScore2: UITextField!
     
@@ -27,6 +27,7 @@ class PollaViewController: UIViewController, PollaGambleDelegate {
         manager = PollaGambleManager(delegate: self)
         team1Label.text = team1
         team2Label.text = team2
+        title = "Apuesta"
     }
 
     @IBAction func onSaveClick(_ sender: Any) {

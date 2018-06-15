@@ -49,6 +49,7 @@ class EquiposViewController: UITableViewController, EquiposDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let playersTableViewController = storyboard.instantiateViewController(withIdentifier: PlayersTableViewController.identifier) as! PlayersTableViewController
         playersTableViewController.url = teams?[indexPath.row].playerLink
+        playersTableViewController.teamName = teams?[indexPath.row].name
         
         self.navigationController?.pushViewController(playersTableViewController, animated: true)
     }

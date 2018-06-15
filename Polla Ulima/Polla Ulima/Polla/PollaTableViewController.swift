@@ -18,6 +18,7 @@ class PollaTableViewController: UITableViewController, PollaDelegate {
     
     override func viewDidLoad() {
         manager = PollaManager(delegate: self)
+        title = "Polla"
     }
     
     override func viewDidAppear(_ animated: Bool) {

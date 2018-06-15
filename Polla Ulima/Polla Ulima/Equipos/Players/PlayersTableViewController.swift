@@ -13,7 +13,8 @@ class PlayersTableViewController: UITableViewController, PlayersDelegate {
     private var manager: PlayersManager!
     private var players: [Player]?
     
-    var url: String!
+    public var url: String!
+    public var teamName: String!
     
     static let identifier: String = "PlayersTableViewController"
 
@@ -21,6 +22,7 @@ class PlayersTableViewController: UITableViewController, PlayersDelegate {
         super.viewDidLoad()
         manager = PlayersManager(urlString: url, delegate: self)
         manager.getPlayers()
+        title = "Jugadores"
     }
     
     // MARK: - Table view data source
@@ -59,7 +61,8 @@ class PlayersTableViewController: UITableViewController, PlayersDelegate {
         let playerView = storyboard.instantiateViewController(withIdentifier: PlayerViewController.identifier) as! PlayerViewController
         playerView.position = players?[indexPath.row].position
         playerView.birthday = players?[indexPath.row].dateOfBirth
-        playerView.number = players?[indexPath.row].name
+        playerView.number = players?[indexPath.row].jerseyNumber
+        playerView.name = players?[indexPath.row].name
         
         navigationController?.pushViewController(playerView, animated: true)
     }

@@ -11,8 +11,9 @@ import UIKit
 class PlayerViewController: UIViewController {
     
     public var position: String!
-    public var number: String!
+    public var number: Int!
     public var birthday: String!
+    public var name: String!
     
     static public let identifier = "PlayerViewController"
     
@@ -23,7 +24,8 @@ class PlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         positionLabel.text = position
-        numberLabel.text = number
+        numberLabel.text = String(number)
         birthdayLabel.text = birthday
+        title = name
     }
 }
