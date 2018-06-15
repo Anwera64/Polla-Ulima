@@ -23,7 +23,11 @@ class EquiposManager {
             return
         }
         
-        URLSession(configuration: .default).dataTask(with: url, completionHandler: { (data, response, error) in
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("2423c7e6dd674d77b56206b654efe69a" , forHTTPHeaderField: "X-Auth-Token")
+        
+        URLSession(configuration: .default).dataTask(with: request, completionHandler: { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
                 return
@@ -48,7 +52,7 @@ class EquiposManager {
         }).resume()
     }
     
-    func getCrest(urlString: String, index: IndexPath) {
+    /*func getCrest(urlString: String, index: IndexPath) {
         guard let url = URL(string: urlString) else {
             print("wrong image url")
             return
@@ -66,10 +70,9 @@ class EquiposManager {
                 }
             }
         }).resume()
-    }
+    }*/
 }
 
 protocol EquiposDelegate {
     func equiposReady(teams: [Team])
-    func imageReady(imageData: Data, index: IndexPath)
 }

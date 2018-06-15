@@ -18,20 +18,25 @@ class PlayersManager {
     }
     
     public func getPlayers() {
-        let url = URL(string: urlString)
-        guard url != nil else {
+        guard let url = URL(string: urlString) else {
             print("wrong player url")
             return
         }
         
-        URLSession(configuration: .default).dataTask(with: url!, completionHandler: { (data, response, error) in
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("2423c7e6dd674d77b56206b654efe69a" , forHTTPHeaderField: "X-Auth-Token")
+        
+            URLSession(configuration: .default).dataTask(with: request, completionHandler: { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
                 return
             }
-            if let d = data, let players = try? JSONDecoder().decode(Players.self, from: d) {
-                DispatchQueue.main.async {
-                    self.delegate?.onPlayersReturned(players: players.players)
+            if let d = data {
+                if let players = try? JSONDecoder().decode(Players.self, from: d) {
+                    DispatchQueue.main.async {
+                        self.delegate?.onPlayersReturned(players: players.players)
+                    }
                 }
             }
         }).resume()

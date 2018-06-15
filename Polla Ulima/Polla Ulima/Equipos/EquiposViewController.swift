@@ -59,9 +59,5 @@ class EquiposViewController: UITableViewController, EquiposDelegate {
         self.tableView.reloadData()
         print("Reloading Data")
     }
-    
-    func imageReady(imageData: Data, index: IndexPath) {
-    }
-    
 }
 

@@ -18,12 +18,12 @@ class Players: Codable {
 
 class Player: Codable {
     let name, position: String
-    let jerseyNumber: Int
+    let jerseyNumber: Int?
     let dateOfBirth: String
     let nationality, contractUntil: String?
     let marketValue: JSONNull?
     
-    init(name: String, position: String, jerseyNumber: Int, dateOfBirth: String, nationality: String?, contractUntil: String?, marketValue: JSONNull?) {
+    init(name: String, position: String, jerseyNumber: Int?, dateOfBirth: String, nationality: String?, contractUntil: String?, marketValue: JSONNull?) {
         self.name = name
         self.position = position
         self.jerseyNumber = jerseyNumber
